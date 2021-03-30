@@ -1,0 +1,13 @@
+
+<div>
+    <form>
+        <label>First Name</label><br>
+        <input type="text" placeholder="Enter First Name" name="first" [(ngModel)]= "first" ><br/>
+        <label>Last Name</label><br>
+        <input type="text" placeholder="Enter Last Name"name="last" [(ngModel)]= "last" ><br/>
+        <label>Mobile Number</label><br>
+        <input type="number" placeholder="Enter mobile number" name="mobno" [(ngModel)]= "mobno" ><br/>
+        <button (click)="save()" type="submit">Save</button>
+        <button (click)="back()" type="submit">Back</button>
+    </form>
+</div>

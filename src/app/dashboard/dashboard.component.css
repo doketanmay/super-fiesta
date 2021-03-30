@@ -1,0 +1,17 @@
+div {
+    border-radius: 5px;
+    border: 1px solid gray;
+    padding: 20px;
+    width:20%;
+    margin:auto;
+    margin-bottom:20px;
+  }
+
+  label{
+      margin-top: 7px;
+  }
+
+  button{
+      margin-top: 10px;
+      
+  }

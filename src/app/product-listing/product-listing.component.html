@@ -1,0 +1,16 @@
+
+<button class="but" (click)="check()" type="submit">Check Product</button>
+<div *ngIf="c1">
+    <div class="card" *ngFor="let p of products">
+        <img src="{{ p.imgUrl }}" alt="{{ p.name }}" >
+        <h1>{{ p.name }}</h1>
+        <p class="price">{{ p.price | currency:symbol:'₹' }}</p>
+        <p>{{ p.description }}</p>
+            <p [hidden] = "p.item"><button (click)="addToCart(p.id)" >Add to Cart</button></p>
+            <p [hidden] = "!p.item">Added to cart successfully</p>
+           <!--  <div *ngFor=" let q of arr1">
+                <p [hidden] ="q" ><button (click)="addToCart(p.id)" >Add to Cart</button></p>
+                <p [hidden] = "!q">Added to cart successfully</p> 
+            </div> -->
+    </div>
+</div>

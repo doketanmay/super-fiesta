@@ -1,0 +1,47 @@
+<div class="center-div">
+    <form #addform="ngForm" (ngSubmit) = "add(addform)">
+        <div class="form-group">
+            <label >Enter empno</label>
+            <input type="number" class="form-control" name="empno" #empno="ngModel" [(ngModel)] = "employee.empno" required/>
+            <div *ngIf="addform.submitted && empno.invalid">
+                <div class="alert alert-danger" *ngIf="empno.errors.required">Emp-No is required</div>
+              </div>
+        </div>
+        <div class="form-group">
+            <label >Enter Name </label>
+            <input type="text" class="form-control" name="name" #name="ngModel" [(ngModel)] = "employee.name"  required/>
+            <div *ngIf="addform.submitted && name.invalid">
+                <div class="alert alert-danger" *ngIf="name.errors.required">Name is required</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label >Enter salary</label>
+            <input type="number" class="form-control" name="salary" #salary="ngModel" [(ngModel)] = "employee.salary" required />
+            <div *ngIf="addform.submitted && salary.invalid">
+                <div class="alert alert-danger" *ngIf="salary.errors.required">Salary is required</div>
+              </div>
+        </div>
+        <div class="form-group">
+            <label >Enter Date Of Joining </label>
+            <input type="date" class="form-control" name="dateofJoining" #doj="ngModel"  [(ngModel)] = "employee.dateofJoining" required/>
+            <div *ngIf="addform.submitted && doj.invalid">
+                <div class="alert alert-danger" *ngIf="doj.errors.required">Date of Joining is required</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label >Select Department </label>
+            <select class="form-control"
+                    name="department" #dept="ngModel" [(ngModel)] = "employee.department" required>
+                <!--<option value="IT">IT Department</option>
+                <option value="HR">HR Department</option>
+                <option value="Admin">Admin Department</option> -->
+                <option *ngFor= "let d of departments" value="{{d}}">{{d}}</option>
+            </select>
+            <div *ngIf="addform.submitted && dept.invalid">
+                <div class="alert alert-danger" *ngIf="dept.errors.required">Department is required</div>
+            </div>
+        </div>
+
+        <button type="submit"  class="btn btn-success">Submit</button>
+    </form>
+</div>
